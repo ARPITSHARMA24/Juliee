@@ -1,18 +1,28 @@
-let anniversary = "2022-10-13";
-let date = new Date(anniversary);
-let dateVal = date.getTime();
+let anniversary = new Date("2025-01-06");
 let today = new Date();
-let now = today.getTime();
-let value = now - dateVal;
-let day = Math.floor(value / (1000 * 60 * 60 * 24));
-let month = Math.floor(value / (1000 * 60 * 60 * 24 * 30.4375));
-let year = Math.floor(value / (1000 * 60 * 60 * 24 * 365.25));
 
-console.log(value);
+let years = today.getFullYear() - anniversary.getFullYear();
+let months = today.getMonth() - anniversary.getMonth();
+let days = today.getDate() - anniversary.getDate();
 
-document.getElementById("days").textContent = day.toString();
-document.getElementById("months").textContent = month.toString();
-document.getElementById("years").textContent = year.toString();
+// If days are negative, borrow from previous month
+if (days < 0) {
+    months--;
+    let prevMonthDays = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    days += prevMonthDays;
+}
+
+// If months are negative, borrow from previous year
+if (months < 0) {
+    years--;
+    months += 12;
+}
+
+console.log(`Years: ${years}, Months: ${months}, Days: ${days}`);
+
+document.getElementById("days").textContent = days.toString();
+document.getElementById("months").textContent = months.toString();
+document.getElementById("years").textContent = years.toString();
 
 
 let musicPlayer = document.querySelector(".music-container");
