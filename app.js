@@ -70,23 +70,23 @@ let soundBarsLottie = bodymovin.loadAnimation({
 
 let trackList = [
     {
-        name: "Only",
-        artist: "Lee Hi",
+        name: "Perfect",
+        artist: "Ed Sheeran",
         path: "./music/only.mp3",
     },
     {
-        name: "Day & Night",
-        artist: "Jung Seung Hwan",
+        name: "Piya Ghar Aavenge",
+        artist: "Kailash Kher",
         path: "./music/day and night.mp3",
     },
     {
-        name: "Love of my Life",
-        artist: "Reyne",
+        name: "Chand Si Mehbooba",
+        artist: "Md. Rafi",
         path: "./music/love of my life.mp3",
     },
     {
-        name: "The Only One",
-        artist: "Reyne",
+        name: "Oh Rangrez",
+        artist: "Javed Bashir",
         path: "./music/the only one.mp3",
     },
 ];
